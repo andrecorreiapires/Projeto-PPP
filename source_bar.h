@@ -1,5 +1,7 @@
-#ifndef BAR_H
-#define BAR_H
+#ifndef SOURCE_BAR_H
+#define SOURCE_BAR_H
+
+// STRUCTS
 
 struct data {
     int dia;
@@ -26,8 +28,14 @@ struct no_aluno {
     struct no_aluno *prox; 
 };
 
-struct no_aluno *create(void);
-void clean(struct no_aluno *list);
-void insert(struct no_aluno *list, struct no_aluno a);
+// DEFINITIONS
+
+struct no_aluno *create_aluno(void);
+void clean_alunos(struct no_aluno *list);
+void insert_aluno(struct no_aluno *list, struct no_aluno a);
+
+struct no_aluno *create_despesa(void);
+void clean_despesas(struct no_aluno *aluno);
+void insert_despesa(struct no_aluno *list, struct no_despesa a);
 
 #endif
