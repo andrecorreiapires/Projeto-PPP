@@ -52,13 +52,12 @@ void clean_alunos(struct no_aluno *list) {
     }
 }
 
-void insert_aluno(struct no_aluno *list, struct no_aluno aluno) {
+void insert_aluno(struct no_aluno *list, struct no_aluno *aluno) {
     struct no_aluno *novo = (struct no_aluno *)malloc(sizeof(struct no_aluno));
     if (novo != NULL) {
-        *novo = aluno;
+        *novo = *aluno;
         novo->prox = list->prox;
         list->prox = novo;
-        novo->
     }
 }
 

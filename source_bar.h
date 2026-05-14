@@ -32,10 +32,15 @@ struct no_aluno {
 
 struct no_aluno *create_aluno(void);
 void clean_alunos(struct no_aluno *list);
-void insert_aluno(struct no_aluno *list, struct no_aluno a);
+void insert_aluno(struct no_aluno *list, struct no_aluno *a);
 
 struct no_aluno *create_despesa(void);
 void clean_despesas(struct no_aluno *aluno);
 void insert_despesa(struct no_aluno *list, struct no_despesa a);
+
+int verificar_file(FILE *f);
+int verificar_input(char input[], char buffer[]);
+void disclaimer(char buffer[]);
+int menu();
 
 #endif
