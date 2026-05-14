@@ -3,13 +3,13 @@
 #include "source_bar.h"
 //BÁSICO
 
-int pesquisar(struct no_aluno *a, int procurar, int *indice){
-    struct elemento *temp = a->header;
+int pesquisarAluno(struct no_aluno *a, int procurar, struct no_aluno *indice){
+    struct no_aluno *temp = a
     int pos = 0;
     while (temp != NULL) {
-        if (temp->valor == procurar) {
+        if (temp->numero == procurar) {
             if (indice != NULL) *indice = pos;
-            return temp->valor;
+            return temp->numero;
         }
         temp = temp->prox;
         pos++;
@@ -21,15 +21,22 @@ int pesquisar(struct no_aluno *a, int procurar, int *indice){
 
 struct no_aluno *create_aluno(void) {
     struct no_aluno *aux = (struct no_aluno *)malloc(sizeof(struct no_aluno));
-    if (aux != NULL) {
+    struct data *nascimento=(struct data *)malloc(sizeof(struct data));
+    if ((aux!=NULL)&&(nascimento!=NULL)){
+
         aux->prox = NULL;
         aux->despesas = NULL;
         aux->ano=NULL;
         aux->curso=NULL;
-        aux->data_nascimento=NULL;
         aux->nome=NULL;
         aux->numero=NULL;
         aux->saldo=NULL;
+
+        aux->data_nascimento=nascimento;
+        aux->data_nascimento->dia=NULL;
+        aux->data_nascimento->mes=NULL;
+        aux->data_nascimento->ano=NULL;
+        
     }
     return aux;
 }

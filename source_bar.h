@@ -18,7 +18,7 @@ struct no_despesa {
 
 struct no_aluno {         
     char nome[150];
-    struct data data_nascimento;
+    struct data *data_nascimento;
     char curso[50];
     int ano;
     int numero;
