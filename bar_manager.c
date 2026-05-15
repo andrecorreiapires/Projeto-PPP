@@ -22,7 +22,7 @@ int main()
         insert_aluno(agenda, novo);
         num_alunos++;
     }
-
+    
     do
     {
         opcao = menu();
@@ -47,8 +47,8 @@ int main()
 
     } while (opcao);
 
-    FILE *f_txt = fopen("Dados.txt", "r");
-    if(verificar_file(f_txt) == true) exit(1);
+    FILE *f_write = fopen("Dados.txt", "r");
+    if(verificar_file(f_write) == true) exit(1);
 
     return 0;
 }

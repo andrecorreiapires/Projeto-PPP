@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "source_bar.h"
 
 #define TAM_BUFFER 1000
@@ -64,9 +65,9 @@ void disclaimer(char buffer[])
     printf("\nDisclaimer: Tens o poder de com toques ultra mega magicos, gerir contas de alunos... Choose wisely your option\n");
     printf("Pressione Enter para continuar...\n");
     fflush(stdin);
-    fgets(buffer, sizeof(buffer), stdin);
+    fgets(buffer, TAM_BUFFER, stdin);
 
-    verificar("inicio", buffer);
+    verificar_input("inicio", buffer);
 }
 
 int menu()
@@ -97,7 +98,7 @@ int menu()
         printf("|                                                                  |\n");
         printf("'-> R: ");
         fgets(buffer, sizeof(buffer), stdin);
-    }while(verificar("opcao", buffer) != true);
+    }while(verificar_input("opcao", buffer) != true);
     
     opcao = atoi(buffer);
     return opcao;
