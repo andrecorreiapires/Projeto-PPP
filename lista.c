@@ -8,8 +8,8 @@ int pesquisarAluno(struct no_aluno *a, int procurar, struct no_aluno *indice){
     int pos = 0;
     while (temp != NULL) {
         if (temp->numero == procurar) {
-            if (indice != NULL) *indice = pos;
-            return temp->numero;
+            if (indice != NULL) *indice = pos;              // podes mexer nestas cenas q tou aqui a comentar, eu vou fazendo a cena das verificações, e depois a parte de ler ficheiros
+            return temp->numero;                            
         }
         temp = temp->prox;
         pos++;
@@ -27,9 +27,9 @@ struct no_aluno *create_aluno(void) {
         aux->prox = NULL;
         aux->despesas = NULL;
         aux->ano=NULL;
-        aux->curso=NULL;
-        aux->nome=NULL;
-        aux->numero=NULL;
+        aux->curso=NULL;                         // Como é Andre, esta é a primeira mensagem q te escrevo ent ya, eu vou fazendo o resto mas vou te escrevendo aqui
+        aux->nome=NULL;                          // como tinha dito, é curtido inicializares valores a NULL mas no tipo deles
+        aux->numero=NULL;                        // int = 0; float = 0.0; char = '\0'; char[] = ""; Data = '01/01/1985' ou algo assim ent ya
         aux->saldo=NULL;
 
         aux->data_nascimento=nascimento;
@@ -69,7 +69,7 @@ void *create_despesa(void){
     struct no_despesa *aux = (struct no_despesa *)malloc(sizeof(struct no_despesa));
     if (aux != NULL){
         aux->prox = NULL;
-        aux->data_despesa=NULL;
+        aux->data_despesa=NULL;                                            // mesma cena que te disse no aluno
         aux->descricao=NULL;
         aux->valor=NULL;
     }
@@ -83,7 +83,7 @@ void clean_despesas(struct no_aluno *aluno){
     }
 }
 
-void insert_despesa(struct no_aluno *list, struct no_despesa despesa) {
+void insert_despesa(struct no_aluno *list, struct no_despesa *despesa) {
     struct no_despesa *novo = (struct no_despesa *)malloc(sizeof(struct no_despesa));
     if (novo != NULL) {
         *novo = despesa;

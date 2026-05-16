@@ -1,34 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 #include "source_bar.h"
 
 #define TAM_BUFFER 1000
-#define LINHA 100
 
 int main()
 {
     struct no_aluno *agenda = create_aluno();
-    struct no_aluno *novo;
+
     int num_alunos = 0, opcao; //Contador para o número de alunos
 
-    FILE *f_txt = fopen("Dados.txt", "r");
-    if(verificar_file(f_txt) == true) exit(1);
+    ler_ficheiro(agenda);
+                                 // criei o ficheiro "File_manager.c" para ler o ficheiro de texto e dar save quando terminar o programa
 
-    while(num_alunos<LINHA && fscanf(f_txt, "%s|%d/%d/%d|%s|%d|%d|%d", 
-        novo->nome, novo->data_nascimento->dia, novo->data_nascimento->mes, novo->data_nascimento->ano,
-        novo->curso, novo->ano, novo->numero, novo->saldo)!=EOF){
-        insert_aluno(agenda, novo);
-        num_alunos++;
-    }
-    
     do
     {
         opcao = menu();
 
         switch(opcao)
         {
+            case 0:
+                save_state();
+                finale();
+                break;
             case 1:
                 break;
             case 2:
@@ -47,14 +42,11 @@ int main()
 
     } while (opcao);
 
-    FILE *f_write = fopen("Dados.txt", "r");
-    if(verificar_file(f_write) == true) exit(1);
-
     return 0;
 }
 
 /*        while(fgets(linha, sizeof(linha), f_txt)){
-            if(fscanf(linha, "%s|%d/%d/%d|%s|%d|%d|%d",  )==8){
+            if(fscanf(linha, "%s|%d/%d/%d|%s|%d|%d|%d",  )==8){                             // nao entendi esta parte mas n vou mexer para se quiseres aproveita la para algo
             }
         }
 */

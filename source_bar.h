@@ -12,7 +12,7 @@ struct data {
 struct no_despesa {
     float valor;
     char descricao[100];
-    struct data data_despesa;
+    struct data *data_despesa;
     struct no_despesa *prox;
 };
 
@@ -36,11 +36,16 @@ void insert_aluno(struct no_aluno *list, struct no_aluno *a);
 
 struct no_aluno *create_despesa(void);
 void clean_despesas(struct no_aluno *aluno);
-void insert_despesa(struct no_aluno *list, struct no_despesa a);
+void insert_despesa(struct no_aluno *list, struct no_despesa *despesa);
 
-int verificar_file(FILE *f);
-int verificar_input(char input[], char buffer[]);
+void limpar_prompt(); 
 void disclaimer(char buffer[]);
 int menu();
+void finale(); 
+
+int verificar_file(FILE *f);
+int verificar_int_final(char buffer[], char final); 
+int verificar_data_existente(int dia, int mes, int ano); 
+int verificar_input(char input[], char buffer[]);
 
 #endif
