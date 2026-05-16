@@ -58,7 +58,7 @@ void ler_ficheiro(struct no_aluno *list)
                    &nova_despesa->data_despesa->ano);
 
             // mete-a no no do aluno
-            insert_despesa(aluno_atual->despesas, nova_despesa);
+            insert_despesa(aluno_atual, nova_despesa);
         }
     }
 

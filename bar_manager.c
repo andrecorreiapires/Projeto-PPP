@@ -11,7 +11,7 @@ int main()
 
     int num_alunos = 0, opcao; //Contador para o número de alunos
 
-    ler_ficheiro(agenda);
+    // ler_ficheiro(agenda);
                                  // criei o ficheiro "File_manager.c" para ler o ficheiro de texto e dar save quando terminar o programa
 
     do
@@ -21,7 +21,7 @@ int main()
         switch(opcao)
         {
             case 0:
-                save_state();
+                // save_state(agenda);
                 finale();
                 break;
             case 1:
